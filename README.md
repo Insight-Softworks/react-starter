@@ -1,5 +1,7 @@
 # React Starter App
 
+You can use this app as a template if you want to start a new React project using `useContext`for state management in a performant and scalable way.
+
 Uses `useContext` for state management following this approach: https://medium.com/@andre.rabold/scaling-react-state-management-part-2-5a9bcda83b55 that relies on https://github.com/dai-shi/use-context-selector
 
 ## Getting Started with Create React App
