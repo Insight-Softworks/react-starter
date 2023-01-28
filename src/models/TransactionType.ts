@@ -1,7 +1,7 @@
 type TransactionType = {
   id: string;
   title: string;
-  amoung: number;
+  amount: number;
   source: string;
   target: string;
 };
