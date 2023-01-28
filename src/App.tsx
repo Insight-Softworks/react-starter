@@ -1,7 +1,10 @@
-import React from "react";
-import useThunkReducer from "./hooks/useThunkReducer";
-import { AppStateContext, DispatchContext } from "./contexts/AppContextProvider";
-import AppState from "./models/AppState";
+import React from 'react';
+import useThunkReducer from './hooks/useThunkReducer';
+import {
+  AppStateContext,
+  DispatchContext,
+} from './contexts/AppContextProvider';
+import AppState from './models/AppState';
 import UserDetails from './components/UserDetails';
 import Balance from './components/Balance';
 
@@ -10,20 +13,20 @@ const defaultState: AppState = {
     id: '1',
     username: 'johndoe',
     firstName: 'John',
-    lastName: 'Doe'
+    lastName: 'Doe',
   },
   balance: {
-    value: 20000
+    value: 20000,
   },
-  transactions: []
+  transactions: [],
 };
 
 function App() {
   const [state, dispatch] = useThunkReducer<AppState>(defaultState);
 
   return (
-    <AppStateContext.Provider value={ state }>
-      <DispatchContext.Provider value={ dispatch }>
+    <AppStateContext.Provider value={state}>
+      <DispatchContext.Provider value={dispatch}>
         <UserDetails />
         <Balance />
       </DispatchContext.Provider>

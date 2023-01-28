@@ -1,5 +1,5 @@
 type BalanceType = {
-  value: number
-}
+  value: number;
+};
 
 export default BalanceType;

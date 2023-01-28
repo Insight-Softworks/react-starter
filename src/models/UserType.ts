@@ -3,6 +3,6 @@ type UserType = {
   username: string;
   firstName: string;
   lastName: string;
-}
+};
 
 export default UserType;

@@ -1,6 +1,6 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState } from 'react';
 
-export type Dispatch<TState> = (action: ThunkAction<TState>) => Promise<void>
+export type Dispatch<TState> = (action: ThunkAction<TState>) => Promise<void>;
 
 /** A thunk action that can be dispatched by the {@link useThunkReducer}. */
 export type ThunkAction<TState> = (
@@ -13,14 +13,16 @@ export type ThunkAction<TState> = (
  *
  * @param initialState
  */
-export const useThunkReducer = function <TState>(initialState: TState): [TState, Dispatch<TState>] {
+export const useThunkReducer = function <TState>(
+  initialState: TState,
+): [TState, Dispatch<TState>] {
   const [state, setState] = useState<TState>(initialState);
 
   const stateRef = useRef<TState>(state);
   const dispatch = useCallback(async (action: ThunkAction<TState>) => {
     try {
       const nextState = await action(dispatch, () => stateRef.current);
-      if (typeof nextState !== "undefined") {
+      if (typeof nextState !== 'undefined') {
         stateRef.current = nextState; // Update the ref right away; synchronously
         setState(nextState as TState);
       }

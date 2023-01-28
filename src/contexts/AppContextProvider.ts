@@ -1,11 +1,11 @@
-import React from 'react';
-import { createContext } from "use-context-selector";
+import { createContext } from 'use-context-selector';
 import { ThunkAction } from '../hooks/useThunkReducer';
 import AppState from '../models/AppState';
 
-// @ts-expect-error
+// @ts-expect-error Initializer
 const AppStateContext = createContext<AppState>();
-// @ts-expect-error
-const DispatchContext = createContext<(action: ThunkAction<AppState>) => Promise<void>>();
+const DispatchContext =
+  // @ts-expect-error Initializer
+  createContext<(action: ThunkAction<AppState>) => Promise<void>>();
 
 export { AppStateContext, DispatchContext };

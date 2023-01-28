@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import useAppStateSelector from '../hooks/useAppStateSelector';
-import useDispatch from '../hooks/useDispatch';
 import UserType from '../models/UserType';
 
 function UserDetails() {
@@ -10,7 +9,7 @@ function UserDetails() {
     <div>
       Welcome, {user.firstName} {user.lastName}!
     </div>
-  )
+  );
 }
 
 export default UserDetails;

@@ -4,6 +4,6 @@ type TransactionType = {
   amoung: number;
   source: string;
   target: string;
-}
+};
 
 export default TransactionType;
